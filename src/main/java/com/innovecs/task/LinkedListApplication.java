@@ -19,6 +19,7 @@ public class LinkedListApplication {
         ListService listService = new ListServiceImpl();
         listService.reverseList(list);
 
-
+        System.out.println("Reversed list: \n");
+        System.out.println(listService.toString(list));
     }
 }

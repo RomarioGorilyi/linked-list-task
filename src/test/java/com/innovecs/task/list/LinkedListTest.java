@@ -1,7 +1,6 @@
 package com.innovecs.task.list;
 
 import com.innovecs.task.iterator.Iterator;
-import com.innovecs.task.list.LinkedList;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;

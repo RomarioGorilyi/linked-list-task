@@ -1,7 +1,6 @@
 package com.innovecs.task.list;
 
 import com.innovecs.task.iterator.ListIterator;
-import com.innovecs.task.list.LinkedList;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -125,14 +124,6 @@ class ListIteratorTest {
         Object[] values = linkedList.toArray();
         Integer[] expectedValues = {1, -3};
         assertTrue(Arrays.equals(values, expectedValues));
-
-//        ListIterator<Integer> iteratorToBeAsserted = linkedList.iterator();
-//        Optional<Integer> addedValue0 = iteratorToBeAsserted.next();
-//        assertTrue(addedValue0.isPresent());
-//        assertEquals(1, (int) addedValue0.get());
-//        Optional<Integer> addedValue1 = iteratorToBeAsserted.next();
-//        assertTrue(addedValue1.isPresent());
-//        assertEquals(-3, (int) addedValue1.get());
     }
 
     @Test

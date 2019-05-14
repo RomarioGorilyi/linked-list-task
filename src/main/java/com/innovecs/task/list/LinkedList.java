@@ -1,6 +1,5 @@
 package com.innovecs.task.list;
 
-import com.innovecs.task.iterator.Iterable;
 import com.innovecs.task.iterator.ListIterator;
 
 import java.util.Optional;
@@ -82,12 +81,6 @@ public class LinkedList<T> implements List<T> {
      */
     @Override
     public Optional<T> getFirst() {
-//        if (size == 0) {
-//            return Optional.empty();
-//        } else {
-//            return Optional.of(getElement(0).getData());
-//        }
-
         int startIndex = 0;
         return applyFailFastRetrieving(startIndex, this::getElement);
     }
@@ -121,11 +114,6 @@ public class LinkedList<T> implements List<T> {
      */
     @Override
     public Optional<T> removeFirst() {
-//        if (size == 0) {
-//            return Optional.empty();
-//        } else {
-//            return Optional.of(removeElement(0).getData());
-//        }
         int startIndex = 0;
         return applyFailFastRetrieving(startIndex, this::removeElement);
     }
@@ -137,15 +125,8 @@ public class LinkedList<T> implements List<T> {
      */
     @Override
     public Optional<T> removeLast() {
-//        if (size == 0) {
-//            return Optional.empty();
-//        } else {
-//            int lastElementIndex = size - 1;
-//            return Optional.of(removeElement(lastElementIndex).getData());
-//        }
         int lastElementIndex = size - 1;
         return applyFailFastRetrieving(lastElementIndex, this::removeElement);
-//        return removeElement(size - 1);
     }
 
     /**
@@ -211,17 +192,6 @@ public class LinkedList<T> implements List<T> {
     }
 
     private T removeElement(int index) {
-        //        Node<T> elementToRemove;
-//        if (index == 0) {
-//            elementToRemove = getElement(index);
-//            headElement = elementToRemove.getNextNode();
-//        } else {
-//            int previousElementIndex = index - 1;
-//            Node<T> previousElement = getElement(previousElementIndex);
-//            elementToRemove = previousElement.getNextNode();
-//            Node<T> nextElement = elementToRemove.getNextNode();
-//            previousElement.setNextNode(nextElement);
-//        }
         return iterator(index)
                 .remove()
                 .orElseThrow(IndexOutOfBoundsException::new);
